@@ -1,0 +1,31 @@
+{
+  "name": "@org/source",
+  "private": true,
+  "scripts": {
+    "prepare": "husky",
+    "preinstall": "npx only-allow pnpm",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --write .",
+    "test": "vitest --watch=false",
+    "test:watch": "vitest --watch=true"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
+    "typescript": "^5.7.3",
+    "husky": "^9.1.7",
+    "eslint": "^9.20.1",
+    "lint-staged": "^15.4.3",
+    "nx": "^20.3.4",
+    "vitest": "^3.0.5"
+  },
+  "workspaces": [
+    "apps/**",
+    "packages/**"
+  ],
+  "packageManager": "pnpm@9.15.5",
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}

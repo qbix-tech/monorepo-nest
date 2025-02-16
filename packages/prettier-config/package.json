@@ -1,0 +1,14 @@
+{
+  "name": "@org/prettier-config",
+  "private": true,
+  "type": "module",
+  "main": "index.mjs",
+  "dependencies": {
+    "prettier": "^3.5.1",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "typescript": "~5.7.3"
+  }
+}

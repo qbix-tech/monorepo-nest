@@ -1,0 +1,15 @@
+{
+  "name": "@org/eslint-config",
+  "private": true,
+  "type": "module",
+  "main": "index.mjs",
+  "dependencies": {
+    "@eslint/js": "^9.20.0",
+    "@nuxt/eslint": "^1.0.1",
+    "eslint": "^9.20.1",
+    "typescript-eslint": "^8.24.0"
+  },
+  "devDependencies": {
+    "typescript": "~5.6.3"
+  }
+}
