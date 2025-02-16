@@ -1,0 +1,16 @@
+name: "monorepo"
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    ports:
+      # Change the number before : to the port the database should be accessible on
+      - 35888:5432
+    volumes:
+      # This is where postgres stores the database..
+      - ../../.dockerVolume/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=dev
+      - POSTGRES_DB=dev
+    restart: unless-stopped

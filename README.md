@@ -1,3 +1,3 @@
-# Monorepo Starter for Typescript Project
+# Monorepo Example for NestJS
 
-This is a starter template for a monorepo typescript project.
+This is a monorepo example for NestJS with drizzle and common database schema package.

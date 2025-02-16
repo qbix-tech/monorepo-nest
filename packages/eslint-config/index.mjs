@@ -10,6 +10,8 @@ export const defaultConfig = {
     "no-console": "error",
     "@typescript-eslint/no-explicit-any": "warn",
     "@typescript-eslint/no-unused-expressions": "off",
+    "@typescript-eslint/no-extraneous-class": "off",
+    "@typescript-eslint/consistent-type-imports": "off",
     "vue/multi-word-component-names": "off",
     "vue/html-self-closing": "off",
     "vue/no-v-model-argument": "off",

@@ -1,5 +1,7 @@
 {
   "eslint.useFlatConfig": true,
   "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
   "vue.server.hybridMode": true
 }
