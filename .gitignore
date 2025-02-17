@@ -14,7 +14,7 @@ out-tsc
 
 # dependencies
 node_modules
-1
+
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json
