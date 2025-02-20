@@ -1,8 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { Pool } from 'pg';
-import { drizzle, NodePgDatabase } from 'drizzle-orm/node-postgres';
-import { schema } from '@org/database';
+import { createDB, defineDrizzlePGConfig } from '@org/database';
 
 export const DRIZZLE = Symbol('drizzle-connection');
 
@@ -14,13 +12,19 @@ export const DRIZZLE = Symbol('drizzle-connection');
       useFactory: (configService: ConfigService) => {
         const databasURL = configService.get<string>('DATABASE_URL');
         const ssl = configService.get<string>('DATABASE_SSL') === 'true';
-        const pool = new Pool({
-          connectionString: databasURL,
-          ssl: ssl,
+        const config = defineDrizzlePGConfig({
+          pg: {
+            connection: 'pool',
+            config: {
+              connectionString: databasURL,
+              ssl,
+            },
+          },
+          options: {
+            casing: 'snake_case',
+          },
         });
-        return drizzle(pool, { casing: 'snake_case' }) as NodePgDatabase<
-          typeof schema
-        >;
+        return createDB(config);
       },
     },
   ],
