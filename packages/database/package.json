@@ -28,6 +28,7 @@
     "db:migrate": "drizzle-kit migrate",
     "db:drop": "drizzle-kit drop",
     "db:deploy": "drizzle-kit push --verbose --strict",
+    "db:seed": "jiti ./scripts/seed",
     "test:types": "tsc --noEmit --skipLibCheck"
   },
   "dependencies": {
@@ -37,6 +38,8 @@
   },
   "devDependencies": {
     "@types/node": "^22.13.4",
+    "@types/pg": "^8.11.10",
+    "dotenv": "^16.4.7",
     "drizzle-kit": "^0.30.4",
     "jiti": "^2.4.2",
     "typescript": "^5.7.3",

@@ -8,7 +8,7 @@ if (!DATABASE_URL) {
 export default defineConfig({
   dialect: "postgresql",
   schema: "./schema",
-  schemaFilter: ["auth"],
+  schemaFilter: ["auth", "story"],
   casing: "snake_case",
   out: "./migrations",
   dbCredentials: {
