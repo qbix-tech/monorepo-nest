@@ -1,24 +1,34 @@
 {
   "name": "@org/database",
   "private": true,
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.js",
-      "default": "./dist/index.js"
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     }
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "prebuild": "rm -rf dist",
-    "build": "tsc --project tsconfig.json",
+    "build": "unbuild",
     "db:studio": "drizzle-kit studio",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:drop": "drizzle-kit drop",
-    "db:deploy": "drizzle-kit push --verbose --strict"
+    "db:deploy": "drizzle-kit push --verbose --strict",
+    "test:types": "tsc --noEmit --skipLibCheck"
   },
   "dependencies": {
     "@paralleldrive/cuid2": "^2.2.2",
@@ -27,8 +37,9 @@
   },
   "devDependencies": {
     "@types/node": "^22.13.4",
-    "@types/pg": "^8.11.10",
     "drizzle-kit": "^0.30.4",
-    "typescript": "~5.6.2"
+    "jiti": "^2.4.2",
+    "typescript": "^5.7.3",
+    "unbuild": "^3.3.1"
   }
 }
